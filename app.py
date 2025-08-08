@@ -52,7 +52,7 @@ def conteudos():
     return render_template('conteudos.html')
 
 @app.route('/sobre')
-@login_required
+#@login_required
 def sobre():
     return render_template('sobre.html')
 
@@ -60,9 +60,16 @@ def sobre():
 @app.route('/cadastro', methods=['GET', 'POST'])
 def cadastro():
     if request.method == 'POST':
-        usuario = request.form['usuario']  # Captura o nome de usuário do formulário
-        nome = request.form['nome']        # Captura o nome completo
-        senha = request.form['senha']      # Captura a senha
+        # Captura os dados do formulário de forma segura
+        email = request.form.get('email')
+        senha = request.form.get('senha')
+        nome = request.form.get('nome')
+        data_nascimento = request.form.get('data_nascimento')
+
+        # Verifica se algum campo está vazio
+        if not email or not nome or not senha or not data_nascimento:
+            flash('Por favor, preencha todos os campos.')
+            return redirect(url_for('cadastro'))
 
         db = conectar()
         sql = 'SELECT * FROM usuarios WHERE nome = ?'
@@ -71,6 +78,7 @@ def cadastro():
         # Verifica se usuário já existe
         if resultado:
             flash('Usuário já existe! Escolha outro nome.')
+
             return redirect(url_for('cadastro'))
 
         # Gera hash seguro da senha
@@ -82,17 +90,17 @@ def cadastro():
         db.commit()
         db.close()
 
-        flash('Cadastro realizado! Faça login.')
+        flash('Cadastro realizado com sucesso! Faça login.')
         return redirect(url_for('login'))
 
-    return render_template('cadastro.html')  # Mostra formulário de cadastro
+    return render_template('cadastro.html')  
 
 # Rota para login de usuários
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        usuario = request.form['usuario']  # Nome de usuário do formulário
-        senha = request.form['senha']      # Senha digitada
+        email = request.form.get('email')  # email do usuário do formulário
+        senha = request.form.get('senha')      # Senha digitada
 
         db = conectar()
         sql = 'SELECT * FROM usuarios WHERE usuario = ?'

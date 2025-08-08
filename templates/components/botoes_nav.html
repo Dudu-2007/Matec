@@ -1,0 +1,16 @@
+<div class="botoes-nav">
+    {% if current_user.is_authenticated %}
+        {% if request.path == url_for('conteudos') %}
+            <a class="botao-extra" href="{{ url_for('painel') }}">Voltar</a>
+        {% endif %}
+        <a id="user">Olá, {{ current_user.nome }}</a>
+        <a class="botao-sair" href="{{ url_for('index') }}">Sair</a>
+    {% else %}
+        <a href="{{ url_for('index') }}" class="botao-extra">Início</a>
+        {% if request.path == url_for('login') %}
+            <a href="{{ url_for('cadastro') }}" class="botao-extra">Cadastre-se</a>
+        {% elif request.path == url_for('cadastro') %}
+            <a href="{{ url_for('login') }}" class="botao-extra">Já tem conta? Faça login</a>
+        {% endif %}
+    {% endif %}
+</div>

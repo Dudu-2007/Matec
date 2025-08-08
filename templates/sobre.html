@@ -6,25 +6,61 @@
 
 {% block conteudo %}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/sobre.css') }}">
-    <div>
+    <div class="pagina">
         <section>
             <div class="container">
-                <h1>Sobre o Matec</h1>
-                <p>O Matec é uma plataforma de aprendizado de matemática voltada para estudantes do IFRN. Nosso objetivo é fornecer recursos de alta qualidade para ajudar os alunos a se prepararem para os desafios acadêmicos.</p>
-                
-                <h2>Recursos Disponíveis</h2>
-                <ul>
-                    <li>Videoaulas explicativas</li>
-                    <li>Exercícios práticos</li>
-                    <li>Material didático completo</li>
-                    <li>Comunidade ativa para suporte e troca de conhecimentos</li>
-                </ul>
+                <div class="sobre">
+                    <div class="titulo-sobre">
+                        <h1>Sobre o Matec</h1>
+                    </div>
+                    <div class="conteudo-sobre">
+                        <p>O <strong>Matec</strong> é uma plataforma de aprendizado de matemática voltada para estudantes do <strong>IFRN</strong>. Nosso objetivo é fornecer recursos de alta qualidade para ajudar os alunos a se prepararem para os desafios acadêmicos.</p>
+                            <h2>Recursos Disponíveis</h2>
 
-                <h2>Nosso Compromisso</h2>
-                <p>Estamos comprometidos em oferecer uma experiência de aprendizado acessível e eficaz, ajudando os alunos a alcançarem seus objetivos acadêmicos.</p>
+                        <ul>
+                            <li>🎥 Videoaulas explicativas</li>
+                            <li>📝 Exercícios práticos</li>
+                            <li>📚 Material didático completo</li>
+                            <li>💬 Comunidade ativa para suporte e troca de conhecimentos</li>
+                        </ul>
+                            <h2>Nosso Compromisso</h2>
+                        <p>🎯 Estamos comprometidos em oferecer uma experiência de aprendizado acessível e eficaz, ajudando os alunos a alcançarem seus objetivos acadêmicos.</p>
+                    </div>
+                </div>
+                <div class="container-colaboradores">
+                    <h1>Nossos Colaboradores</h1>
+                        <div class="colaboradores">
+                        <div class="colaborador">
+                            <img src="{{ url_for('static', filename='images/sem_imagem_avatar.png') }}" alt="">
+                            <h4>Eduardo Vinicius</h4>
+                            <p>Uma breve descrição</p>
+                        </div>
+                        <div class="colaborador">
+                            <img src="{{ url_for('static', filename='images/sem_imagem_avatar.png') }}" alt="">
+                            <h4>Jose Abilio</h4>
+                            <p>Uma breve descrição</p>
+                        </div>
+                        <div class="colaborador">
+                            <img src="{{ url_for('static', filename='images/sem_imagem_avatar.png') }}" alt="">
+                            <h4>Maria Luiza</h4>
+                            <p>Uma breve descrição</p>
+                        </div>
+                        <div class="colaborador">
+                            <img src="{{ url_for('static', filename='images/sem_imagem_avatar.png') }}" alt="">
+                            <h4>Lucas Fernando</h4>
+                            <p>Uma breve descrição</p>
+                        </div>
+                        <div class="colaborador">
+                            <img src="{{ url_for('static', filename='images/sem_imagem_avatar.png') }}" alt="">
+                            <h4>Weslley Albert</h4>
+                            <p>Uma breve descrição</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
+
   
 
 {% endblock %}

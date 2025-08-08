@@ -41,7 +41,7 @@ body {
 
 .logo a:hover {
     color: #15C315;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.1s ease-in-out;
 }
 
 .logo img {

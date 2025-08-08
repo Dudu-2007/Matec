@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Fjalla+One&family=Playwrite+VN:wght@100..400&display=swap');
+
+
+/* Estilo básico para o formulário de cadastro */
+
+
+body {
+    background-color:  #eaf7f5 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+
+    width: 400px;
+    margin: 60px auto 40px auto; /* centralizado com margem superior para não ficar atrás da navbar */
+    background-color: #f9f9f9;
+    padding: 25px 30px;
+    border-radius: 8px;
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: black
+}
+
+form input[type="email"],
+form input[type="text"],
+form input[type="password"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 18px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="email"]:focus,
+form input[type="text"]:focus,
+form input[type="password"]:focus,
+form input[type="date"]:focus {
+    border-color: #15C315; 
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    background-color: #15C315;
+    color: white;
+    border: none;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: #0f9b0f;
+}
+
+p {
+    text-align: center;
+    font-family: 'Fjalla One', sans-serif;
+    margin-top: 18px;
+}
+
+p a {
+    color: #15C315;
+    text-decoration: none;
+    
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+h2 {
+    padding-top:50px ;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Fjalla One', sans-serif;
+ 
+}
+

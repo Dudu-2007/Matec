@@ -1,30 +1,37 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Cadastro de Usuário</title>
-</head>
-<body>
-  <h2>Cadastro de Usuário</h2>
+{% extends 'base2.html' %}
+
+{% block title %}Cadastro Usuarios {% endblock %}
+
+
+{% block conteudo %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cadastro.css') }}" />
+
+<h2>Cadastro</h2>
 
   <!-- Formulário envia dados via POST para a mesma rota /cadastro -->
   <form method="POST">
     <!-- Campo para digitar o nome do usuário -->
-    <input type="text" name="usuario" placeholder="Usuário" required><br>
+    <label for="email">Email</label>
+    <input type="email" name="email" placeholder="Email" required><br>
 
     <!-- Campo para o nome completo -->
+    <label for="nome">Nome</label>
     <input type="text" name="nome" placeholder="Nome completo" required><br>
 
     <!-- Campo para a senha -->
+    <label for="senha">Senha</label>
     <input type="password" name="senha" placeholder="Senha" required><br>
 
+    <!-- Campo para data de nascimento-->
+      <label for="data_nascimento">Data de Nascimento</label>
+    <input type="date" name="data_nascimento" placeholder="Data_nascimento" required><br>
     <!-- Botão para enviar o formulário -->
     <button type="submit">Cadastrar</button>
   </form>
 
   <!-- Link para ir para a página de login -->
-  <p><a href="/login">Já tem conta? Faça login</a></p>
+  <p><a href="{{url_for('login')}}">Já tem conta? Faça login</a></p>
 
   <!-- Aqui pode mostrar mensagens flash do Flask, como erros ou sucesso -->
 {% include 'components/flash_messages.html' %}
-</body>
-</html>
+{% endblock %}
